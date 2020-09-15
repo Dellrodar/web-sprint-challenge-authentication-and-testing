@@ -28,7 +28,6 @@ router.post('/login', async (req, res, next) => {
     const { username } = req.body
     const user = await users.findBy({ username: username }).first()
 
-    console.log(user)
     if (!user) {
       res.status(401).json({ message: "Invalid username" })
     }

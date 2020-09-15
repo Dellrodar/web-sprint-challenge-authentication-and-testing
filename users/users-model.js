@@ -3,7 +3,9 @@ const bcrypt = require("bcryptjs")
 
 
 const add = async (user) => {
-    user.password = await bcrypt.hash(user.password, process.env.JWT_HASH_AMOUNT);
+    const hash = parseInt(process.env.JWT_HASH_AMOUNT);
+
+    user.password = await bcrypt.hash(user.password, hash);
     const [id] = await db("users").insert(user);
 
     return findById(id);
