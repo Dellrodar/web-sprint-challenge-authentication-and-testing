@@ -26,11 +26,18 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+   When using sessions, each client will have a unique session stored on the server. Sessions provide a way to persist data across requests. We’ll use them to save authentication information, so there is no need to re-enter credentials on every new request the client makes to the server. A JSON Web Token (JWT) is a safe, compact, and self-contained way of transmitting information between multiple parties in the form of a JSON object.
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
 
+Uses a hashing to encrypt passwords
+
 3. How are unit tests different from integration and end-to-end testing.
+   Unit testing as a test of isolate group, where as end 2 end is all testing all parts of the application
 
 4. How _Test Driven Development_ changes the way we write applications and tests.
+
+Test driven development is the process of writing tests before code so it give you an idea of how to write your code.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -52,7 +59,7 @@ Your finished project must include all of the following requirements:
 - [ ] An authentication workflow with functionality for account creation and login implemented inside `/auth/auth-router.js`. A `user` has `username` and `password`. Both properties are required.
 - [ ] Middleware used to restrict access to resources for non authenticated requests. Use the file: `./auth/authenticate-middleware.js` as a starting point.
 - [ ] Configuration for running tests using `Jest`.
-- [ ] A **minimum o 2 tests** per API endpoint.
+- [ ] A **minimum of 2 tests** per API endpoint.
 
 **Note**: the database already has the users table, but if you run into issues, the migrations are available.
 
